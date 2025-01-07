@@ -1,9 +1,10 @@
 const posts = require('../data/posts');
 
 const index = (req, res) =>{
+  console.log(req.query)
   let listaPost = posts;
-  if(req.query.status){
-    listaPost = posts.filter(post => post.titolo === req.query.status)
+  if(req.query.title){
+    listaPost = posts.filter(post => post.title === req.query.title)
   }
   res.json(listaPost)
 }
