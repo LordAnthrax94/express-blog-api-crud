@@ -9,8 +9,6 @@ const index = (req, res) =>{
   res.json(listaPost)
 }
 
-
-
 const show = (req, res) =>{
   const post = posts.find(post => post.id == req.params.id)
 
