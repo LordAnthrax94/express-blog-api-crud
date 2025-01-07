@@ -15,9 +15,9 @@ const show = (req, res) =>{
   if(!post){
     res.status(404)
     return res.json({
-      message: "post inesistente, prova un altro dolce",
+      message: 'post inesistente, prova un altro dolce',
       status: 404,
-      error:"kilogram not found"
+      error:'not found'
     })
   }
   res.json(post)
@@ -28,9 +28,9 @@ const destroy = (req, res) =>{
   if(!post){
     res.status(404)
     return res.json({
-      message: "post inesistente, prova un altro dolce",
+      message: 'post inesistente, prova un altro dolce',
       status: 404,
-      error:"kilogram not found"
+      error:'not found'
     })
   }
   posts.splice(posts.indexOf(post), 1)
