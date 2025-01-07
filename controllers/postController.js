@@ -34,7 +34,11 @@ const destroy = (req, res) =>{
     })
   }
   posts.splice(posts.indexOf(post), 1)
-  res.status(204)
+  res.status(200)
+  return res.json({
+    message: 'Eliminazione completata',
+    status: 200    
+  })
 }
 
 module.exports = {
