@@ -23,6 +23,34 @@ const show = (req, res) =>{
   res.json(post)
 }
 
+const store = (req, res) =>{
+  const id = posts.at(-1).id +1;
+
+  const newPost = {
+    id,
+    ...req.body
+  }
+
+  posts.push(newPost)
+
+  res.status(201)
+  req.json(posts)
+}
+
+const update = (req, res) =>{
+  const id = req.params.id
+  const posts = posts.find(post => post.id == id);
+
+  if(!post){
+    res.status(404)
+    return res.json ({
+      message: 'post inesistente, prova un altro dolce',
+      staut: 404,
+      error: 'not found'
+    })
+  }
+}
+
 const destroy = (req, res) =>{
   const post = posts.find(post => post.id == req.params.id)
   if(!post){
@@ -43,6 +71,9 @@ const destroy = (req, res) =>{
 
 module.exports = {
   index,
-  show,  
+  show,
+  store,
+  update,
+  modify,  
   destroy
 }
