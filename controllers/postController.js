@@ -39,7 +39,7 @@ const store = (req, res) =>{
 
 const update = (req, res) =>{
   const id = req.params.id
-  const posts = posts.find(post => post.id == id);
+  const post = posts.find(post => post.id == id);
 
   if(!post){
     res.status(404)
@@ -48,8 +48,33 @@ const update = (req, res) =>{
       staut: 404,
       error: 'not found'
     })
+  };
+
+  for(let key in req.body){
+    post[key] = req.body[body]
   }
+  res.json(post)
 }
+
+const modify = (req, res) =>{
+  const id = req.params.id
+  const post = posts.find(post => post.id == id);
+
+  if(!post){
+    res.status(404)
+    return res.json ({
+      message: 'post inesistente, prova un altro dolce',
+      staut: 404,
+      error: 'not found'
+    })
+  };
+
+  for(let key in req.body){
+    post[key] = req.body[body]
+  }
+  res.json(post)
+}
+
 
 const destroy = (req, res) =>{
   const post = posts.find(post => post.id == req.params.id)
