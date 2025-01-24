@@ -34,7 +34,7 @@ const store = (req, res) =>{
   posts.push(newPost)
 
   res.status(201)
-  req.json(posts)
+  res.json(posts)
 }
 
 const update = (req, res) =>{

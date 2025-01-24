@@ -10,8 +10,10 @@ const app = express();
 const port = 3000;
 
 app.use(cors({
-  origin:'http://localhost:3000'
+  origin:['http://localhost:5173', 'http://localhost:5174']
 }))
+
+app.use(express.static('public'))
 
 app.use(express.json());
 
