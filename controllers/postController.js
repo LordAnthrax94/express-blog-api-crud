@@ -25,6 +25,8 @@ const show = (req, res) =>{
 
 const store = (req, res) =>{
   const id = posts.at(-1).id +1;
+  console.log( id);
+  
 
   const newPost = {
     id,
